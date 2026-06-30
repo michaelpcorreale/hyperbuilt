@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { asset } from "@/lib/asset";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -7,8 +8,8 @@ export const metadata: Metadata = {
     "Hyperbuilt acquires founder-led precision machine shops and modernizes them into highly automated, software-driven factories — building the precision components that defend the nation and rebuild its industrial base.",
   icons: {
     icon: [
-      { url: "/uploads/favicon-256x256.png", type: "image/png", sizes: "256x256" },
-      { url: "/uploads/favicon.ico" },
+      { url: asset("/uploads/favicon-256x256.png"), type: "image/png", sizes: "256x256" },
+      { url: asset("/uploads/favicon.ico") },
     ],
   },
 };

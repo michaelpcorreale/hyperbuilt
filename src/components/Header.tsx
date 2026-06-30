@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { asset } from "@/lib/asset";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -17,7 +18,7 @@ export default function Header() {
       <div className="header-inner">
         <a href="#top" className="header-logo" aria-label="Hyperbuilt home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/uploads/FullLogo.svg" alt="Hyperbuilt" />
+          <img src={asset("/uploads/FullLogo.svg")} alt="Hyperbuilt" />
         </a>
         <nav className="nav">
           <a href="#platform">Platform</a>

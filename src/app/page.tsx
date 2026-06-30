@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Header from "@/components/Header";
 import RevealController from "@/components/RevealController";
+import { asset } from "@/lib/asset";
 
 export default function Home() {
   return (
@@ -17,9 +18,9 @@ export default function Home() {
             muted
             loop
             playsInline
-            poster="/uploads/moment-bg.min.jpg"
+            poster={asset("/uploads/moment-bg.min.jpg")}
           >
-            <source src="/uploads/hero.mp4" type="video/mp4" />
+            <source src={asset("/uploads/hero.mp4")} type="video/mp4" />
           </video>
           <div className="hero-scrim" />
           <div className="hero-content reveal">
@@ -34,7 +35,7 @@ export default function Home() {
 
         {/* ---------- The Moment ---------- */}
         <section id="moment" className="moment section-line">
-          <img className="media-cover" src="/uploads/moment-bg.min.jpg" alt="" />
+          <img className="media-cover" src={asset("/uploads/moment-bg.min.jpg")} alt="" />
           <div className="moment-scrim" />
           <div className="moment-grid">
             <div className="reveal">
@@ -60,7 +61,7 @@ export default function Home() {
         <section className="band section-line">
           <img
             className="media-cover"
-            src="/uploads/pexels-mc1012can-8969442.min.jpg"
+            src={asset("/uploads/pexels-mc1012can-8969442.min.jpg")}
             alt=""
           />
           <div className="band-scrim" />
@@ -113,7 +114,7 @@ export default function Home() {
               ].map((c) => (
                 <div className="card reveal" key={c.step}>
                   <div className="card-media">
-                    <img src={c.img} alt={c.alt} />
+                    <img src={asset(c.img)} alt={c.alt} />
                   </div>
                   <div className="card-body">
                     <span className="card-step">{c.step}</span>
@@ -128,7 +129,7 @@ export default function Home() {
 
         {/* ---------- Operating Layer ---------- */}
         <section id="layer" className="layer section-line">
-          <img className="media-cover" src="/uploads/layer-bg2.min.jpg" alt="" />
+          <img className="media-cover" src={asset("/uploads/layer-bg2.min.jpg")} alt="" />
           <div className="layer-scrim" />
           <div className="layer-grid">
             <div className="copy reveal">
@@ -148,7 +149,7 @@ export default function Home() {
             </div>
             <div className="layer-panel reveal">
               <video className="media-cover" autoPlay muted loop playsInline>
-                <source src="/uploads/layer.mp4" type="video/mp4" />
+                <source src={asset("/uploads/layer.mp4")} type="video/mp4" />
               </video>
               <div className="panel-scrim" />
               <span className="panel-tag left">HYPERBUILT.OS</span>
@@ -162,7 +163,7 @@ export default function Home() {
 
         {/* ---------- The Result / Network ---------- */}
         <section id="network" className="result section-line">
-          <img className="result-watermark" src="/uploads/IconLogo.svg" alt="" />
+          <img className="result-watermark" src={asset("/uploads/IconLogo.svg")} alt="" />
           <div className="result-inner">
             <div className="result-head reveal">
               <span className="eyebrow">The Result</span>
@@ -180,7 +181,7 @@ export default function Home() {
               </span>
               <img
                 className="graphic"
-                src="/uploads/network-graphic.svg"
+                src={asset("/uploads/network-graphic.svg")}
                 alt="Hyperbuilt factory network"
               />
             </div>
@@ -212,7 +213,7 @@ export default function Home() {
         {/* ---------- For Founders ---------- */}
         <section id="founders" className="founders section-line">
           <video className="media-cover" autoPlay muted loop playsInline>
-            <source src="/uploads/founders.mp4" type="video/mp4" />
+            <source src={asset("/uploads/founders.mp4")} type="video/mp4" />
           </video>
           <div className="founders-scrim" />
           <div className="founders-inner">
@@ -254,7 +255,7 @@ export default function Home() {
           <div className="footer-inner">
             <div className="footer-grid">
               <div>
-                <img src="/uploads/FullLogo.svg" alt="Hyperbuilt" />
+                <img src={asset("/uploads/FullLogo.svg")} alt="Hyperbuilt" />
                 <p className="footer-about">
                   America&rsquo;s autonomous precision manufacturing platform — preserving and
                   modernizing the shops that build flight-critical hardware.
