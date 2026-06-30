@@ -226,7 +226,7 @@ export default function Home() {
                 give what you built its next chapter — with the capital and technology to scale.
               </p>
               <div className="founders-cta">
-                <a href="mailto:founders@hyperbuilt.com" className="btn-primary">
+                <a href="mailto:michael@bookmarkpartners.com" className="btn-primary">
                   Start A Conversation <span className="chev">&rsaquo;</span>
                 </a>
                 <a href="#platform" className="btn-ghost">
@@ -279,7 +279,7 @@ export default function Home() {
               <div>
                 <div className="footer-col-title">Connect</div>
                 <div className="footer-links">
-                  <a href="mailto:founders@hyperbuilt.com">Sell your shop</a>
+                  <a href="mailto:michael@bookmarkpartners.com">Sell your shop</a>
                 </div>
               </div>
             </div>
