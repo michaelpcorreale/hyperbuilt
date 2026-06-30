@@ -74,11 +74,9 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
+        # Served at the root of the custom domain (hyperbuilt.com), so no base
+        # path. The CNAME file in public/ keeps the domain attached per deploy.
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
-        env:
-          # Site is served from https://michaelpcorreale.github.io/hyperbuilt/,
-          # so the static export must be built for the /hyperbuilt subpath.
-          NEXT_PUBLIC_BASE_PATH: /hyperbuilt
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
