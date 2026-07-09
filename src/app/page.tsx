@@ -24,7 +24,11 @@ export default function Home() {
           </video>
           <div className="hero-scrim" />
           <div className="hero-content reveal">
-            <h1>Made in America. Built for what&rsquo;s next.</h1>
+            <h1>
+              Made in America.
+              <br />
+              Built for what&rsquo;s next.
+            </h1>
             <p>
               We acquire founder-led precision machine shops that have quietly made
               flight-critical parts for defense and aerospace for decades — and modernize
@@ -73,7 +77,7 @@ export default function Home() {
 
         {/* ---------- The Platform ---------- */}
         <section id="platform" className="section-line">
-          <div className="wrap" style={{ paddingTop: 88, paddingBottom: 88 }}>
+          <div className="wrap section-pad">
             <div className="platform-head reveal">
               <div>
                 <span className="eyebrow">The Platform</span>
@@ -287,8 +291,6 @@ export default function Home() {
               <span className="footer-copy">© 2026 Hyperbuilt</span>
               <div className="footer-meta">
                 <span>Made In America 🇺🇸</span>
-                <span className="sep">/</span>
-                <span>Precision Manufacturing</span>
               </div>
             </div>
           </div>
