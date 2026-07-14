@@ -39,8 +39,6 @@ export default function Home() {
 
         {/* ---------- The Moment ---------- */}
         <section id="moment" className="moment section-line">
-          <img className="media-cover" src={asset("/uploads/moment-bg.min.jpg")} alt="" />
-          <div className="moment-scrim" />
           <div className="moment-grid">
             <div className="reveal">
               <span className="eyebrow">The Moment</span>
@@ -63,11 +61,16 @@ export default function Home() {
 
         {/* ---------- Photo band ---------- */}
         <section className="band section-line">
-          <img
+          <video
             className="media-cover"
-            src={asset("/uploads/pexels-mc1012can-8969442.min.jpg")}
-            alt=""
-          />
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster={asset("/uploads/inside-network.min.jpg")}
+          >
+            <source src={asset("/uploads/inside-network.mp4")} type="video/mp4" />
+          </video>
           <div className="band-scrim" />
           <div className="band-content reveal">
             <span className="eyebrow">Inside The Network</span>
@@ -216,9 +219,7 @@ export default function Home() {
 
         {/* ---------- For Founders ---------- */}
         <section id="founders" className="founders section-line">
-          <video className="media-cover" autoPlay muted loop playsInline>
-            <source src={asset("/uploads/founders.mp4")} type="video/mp4" />
-          </video>
+          <img className="media-cover" src={asset("/uploads/moment-bg.min.jpg")} alt="" />
           <div className="founders-scrim" />
           <div className="founders-inner">
             <div className="founders-content reveal">

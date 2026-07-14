@@ -45,9 +45,6 @@ export default function Header() {
             </a>
           ))}
         </nav>
-        <a href="#founders" className="btn-sell">
-          Sell Your Shop <span className="chev">&rsaquo;</span>
-        </a>
         <button
           type="button"
           className={`nav-toggle${menuOpen ? " open" : ""}`}
@@ -69,9 +66,6 @@ export default function Header() {
               {l.label}
             </a>
           ))}
-          <a href="#founders" className="mobile-sell" onClick={closeMenu}>
-            Sell Your Shop <span className="chev">&rsaquo;</span>
-          </a>
         </nav>
       </div>
     </header>
