@@ -1603,10 +1603,8 @@
     letter-spacing: 0.04em;
     padding: 12px 6px;
   }
-  .v3-mobile-menu .v3-contact-btn {
-    display: inline-flex;
-    margin-top: 8px;
-    align-self: flex-start;
+  .v3-logo img {
+    height: 17px;
   }
   .v3-scroll-hint {
     display: none;

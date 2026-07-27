@@ -59,8 +59,8 @@ export default function V3Header() {
             {l.label}
           </a>
         ))}
-        <a href="#contact" className="v3-contact-btn" onClick={close}>
-          CONTACT &gt;
+        <a href="#contact" onClick={close}>
+          Contact
         </a>
       </div>
     </header>
