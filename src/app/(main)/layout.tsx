@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./v3.css";
 import V3Header from "@/components/v3/Header";
@@ -14,12 +13,6 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap",
 });
-
-export const metadata: Metadata = {
-  title: "Hyperbuilt — Autonomous Precision Manufacturing for Defense",
-  description:
-    "America can't make thousands of the parts it depends on. We built the system that can — autonomous precision manufacturing, made in America.",
-};
 
 export default function V3Layout({ children }: { children: React.ReactNode }) {
   return (
