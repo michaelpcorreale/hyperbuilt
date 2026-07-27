@@ -3,9 +3,9 @@ import { asset } from "@/lib/asset";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Hyperbuilt — America's Autonomous Precision Manufacturing Platform",
+  title: "Hyperbuilt — Autonomous Precision Manufacturing for Defense",
   description:
-    "Hyperbuilt acquires founder-led precision machine shops and modernizes them into highly automated, software-driven factories — building the precision components that defend the nation and rebuild its industrial base.",
+    "America can't make thousands of the parts it depends on. We built the system that can — autonomous precision manufacturing, made in America.",
   icons: {
     icon: [
       { url: asset("/uploads/favicon-256x256.png"), type: "image/png", sizes: "256x256" },

@@ -1,0 +1,12 @@
+<svg viewBox="0 0 519 559" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0 559) rotate(-90)">
+    <path d="M0 0L280.92 182.384V316.813L3.42702e-06 133.582L0 0Z" fill="white"/>
+    <path d="M0 0L280.92 182.384V316.813L3.42702e-06 133.582L0 0Z" fill="#EEEEEE" fill-opacity="0.5"/>
+    <path d="M0 202.187L280.92 384.571V519L3.42702e-06 335.768L0 202.187Z" fill="white"/>
+    <path d="M0 202.187L280.92 384.571V519L3.42702e-06 335.768L0 202.187Z" fill="#EEEEEE" fill-opacity="0.5"/>
+    <path d="M559 0L278.08 182.384V316.813L559 133.582V0Z" fill="white"/>
+    <path d="M559 0L278.08 182.384V316.813L559 133.582V0Z" fill="#EEEEEE" fill-opacity="0.5"/>
+    <path d="M559 202.187L278.08 384.571V519L559 335.768V202.187Z" fill="white"/>
+    <path d="M559 202.187L278.08 384.571V519L559 335.768V202.187Z" fill="#EEEEEE" fill-opacity="0.5"/>
+  </g>
+</svg>

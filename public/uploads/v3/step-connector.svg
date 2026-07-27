@@ -1,0 +1,8 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="40" height="20" viewBox="0 0 40 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="connector-01">
+<g id="line">
+<rect width="32" height="2" transform="translate(0 9)" fill="#595959"/>
+</g>
+<path id="arrowhead" d="M32 5L40 10L32 15V5Z" fill="var(--fill-0, #595959)"/>
+</g>
+</svg>

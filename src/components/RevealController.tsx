@@ -13,7 +13,7 @@ export default function RevealController() {
   useEffect(() => {
     if (!document.documentElement.classList.contains("motion")) return;
     if (!("IntersectionObserver" in window)) {
-      document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
+      document.querySelectorAll(".reveal, .reveal-stagger").forEach((el) => el.classList.add("in"));
       return;
     }
     const io = new IntersectionObserver(
@@ -27,7 +27,7 @@ export default function RevealController() {
       },
       { threshold: 0.16, rootMargin: "0px 0px -8% 0px" }
     );
-    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    document.querySelectorAll(".reveal, .reveal-stagger").forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, []);
 
