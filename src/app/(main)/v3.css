@@ -1561,8 +1561,9 @@
     width: 100%;
   }
   .v3-footer-links {
-    flex-wrap: wrap;
-    gap: 10px 16px;
+    flex-wrap: nowrap;
+    gap: clamp(4px, 1.6vw, 8px);
+    font-size: clamp(10px, 2.9vw, 13px);
   }
   .v3-footer-bottom {
     flex-direction: column;
