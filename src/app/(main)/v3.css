@@ -107,6 +107,11 @@
   width: auto;
   display: block;
 }
+/* Offset anchor jumps so section tops clear the fixed header pill
+   (header = top padding clamp(16,2.7vw,39) + 70px pill + ~16px gap). */
+.v3-root section[id] {
+  scroll-margin-top: calc(clamp(16px, 2.7vw, 39px) + 86px);
+}
 .v3-nav {
   display: flex;
   align-items: center;

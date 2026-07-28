@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { asset } from "@/lib/asset";
+import HeroVideo from "@/components/v3/HeroVideo";
 
 const PROCESS_STEPS = [
   { num: "01", label: "SCAN", icon: "icon-scan.svg", body: "Industrial CT and metrology capture the part inside and out, internal geometry included." },
@@ -56,16 +57,10 @@ export default function V3Home() {
     <>
       {/* ============ HERO ============ */}
       <section id="top" className="v3-hero">
-        <video
-          className="v3-hero-media"
-          autoPlay
-          muted
-          loop
-          playsInline
+        <HeroVideo
+          src={asset("/uploads/v3/hero.mp4")}
           poster={asset("/uploads/v3/hero-poster.jpg")}
-        >
-          <source src={asset("/uploads/v3/hero.mp4")} type="video/mp4" />
-        </video>
+        />
         <div className="v3-hero-scrim" />
         <div className="v3-hero-inner v3-wrap reveal">
           <h1>
