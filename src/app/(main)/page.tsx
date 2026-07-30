@@ -14,6 +14,7 @@ const SUBSYSTEMS = [
   {
     cls: "v3-sub-core",
     logo: "core-logo.png",
+    name: "Core",
     tagline: "owns the record.",
     desc: "Event-sourced state, compliance traveler, release gates, scheduling against hard resource limits.",
     num: "SUBSYSTEM 02",
@@ -21,6 +22,7 @@ const SUBSYSTEMS = [
   {
     cls: "v3-sub-cell",
     logo: "cell-logo.png",
+    name: "Cell",
     tagline: "commands the floor.",
     desc: "Permissives, handshakes, and cell I/O on a deterministic controller.",
     num: "SUBSYSTEM 03",
@@ -28,6 +30,7 @@ const SUBSYSTEMS = [
   {
     cls: "v3-sub-monitor",
     logo: "monitor-logo.png",
+    name: "Monitor",
     tagline: "records the truth.",
     desc: "Real-time machine data feeding a historian. It reads; it commands nothing.",
     num: "SUBSYSTEM 04",
@@ -94,7 +97,12 @@ export default function V3Home() {
         </div>
         <div className="v3-mission-media">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img loading="lazy" decoding="async" src={asset("/uploads/v3/mission.min.jpg")} alt="" />
+          <img
+            loading="lazy"
+            decoding="async"
+            src={asset("/uploads/v3/mission.min.jpg")}
+            alt="Operator monitoring an automated manufacturing floor on a tablet"
+          />
         </div>
         <div className="v3-mission-whiterect" />
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -245,7 +253,7 @@ export default function V3Home() {
             </div>
             <div className="v3-wb-shot">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img loading="lazy" decoding="async" src={asset("/uploads/v3/workbench.min.jpg")} alt="Workbench" />
+              <img loading="lazy" decoding="async" src={asset("/uploads/v3/workbench.min.jpg")} alt="Hyperbuilt Workbench dashboard" />
             </div>
           </div>
           <div className="v3-wb-info">
@@ -281,7 +289,7 @@ export default function V3Home() {
             <div className={`v3-sub-card ${s.cls}`} key={s.num}>
               <div className="v3-sub-accent" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img loading="lazy" decoding="async" className="v3-sub-logo" src={asset(`/uploads/v3/${s.logo}`)} alt="" />
+              <img loading="lazy" decoding="async" className="v3-sub-logo" src={asset(`/uploads/v3/${s.logo}`)} alt={s.name} />
               <div>
                 <p className="v3-sub-tagline">{s.tagline}</p>
                 <p className="v3-sub-desc">{s.desc}</p>

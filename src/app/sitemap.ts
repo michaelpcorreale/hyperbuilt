@@ -9,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://hyperbuilt.com/",
       changeFrequency: "monthly",
       priority: 1,
+      images: [
+        "https://hyperbuilt.com/uploads/og-image.jpg",
+        "https://hyperbuilt.com/uploads/v3/mission.min.jpg",
+        "https://hyperbuilt.com/uploads/v3/cell-photo.min.jpg",
+        "https://hyperbuilt.com/uploads/v3/workbench.min.jpg",
+      ],
     },
   ];
 }
