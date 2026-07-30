@@ -64,7 +64,7 @@ export default function V3Home() {
         <div className="v3-hero-scrim" />
         <div className="v3-hero-inner v3-wrap reveal">
           <h1>
-            The defense sourcing crisis
+            The defense sourcing crisis{" "}
             <br />
             Fixed autonomously
           </h1>

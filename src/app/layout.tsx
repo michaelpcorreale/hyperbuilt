@@ -45,6 +45,19 @@ export const metadata: Metadata = {
 // Setting `.motion` before first paint avoids a flash of hidden content.
 const motionScript = `(function(){try{if(!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('motion');}}catch(e){}})();`;
 
+// Organization structured data (schema.org) for richer search results.
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Hyperbuilt",
+  legalName: "Hyperbuilt Industries",
+  url: SITE_URL,
+  logo: `${SITE_URL}/uploads/favicon-256x256.png`,
+  image: `${SITE_URL}/uploads/og-image.jpg`,
+  description: DESCRIPTION,
+  sameAs: ["https://www.linkedin.com/company/hyperbuilt/"],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -52,6 +65,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: motionScript }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
       </head>
       <body>{children}</body>
     </html>
