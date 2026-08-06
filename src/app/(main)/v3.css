@@ -754,7 +754,7 @@
 /* workbench block */
 .v3-brain-workbench {
   display: flex;
-  height: 540px;
+  align-items: stretch;
   padding: 0 var(--bx);
   background: #151515;
   overflow: hidden;
@@ -762,7 +762,6 @@
 .v3-wb-panel {
   width: 858px;
   max-width: 68.1%;
-  height: 100%;
   background: #0d0d0d;
   display: flex;
   flex-direction: column;
@@ -798,20 +797,16 @@
   color: #737373;
 }
 .v3-wb-shot {
-  flex: 1;
   overflow: hidden;
 }
 .v3-wb-shot img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: left top;
+  height: auto;
   display: block;
 }
 .v3-wb-info {
   flex: 1;
   min-width: 0;
-  height: 100%;
   background: #181818;
   padding: 48px 40px;
   display: flex;
@@ -1459,7 +1454,7 @@
   .v3-wb-panel {
     width: 100%;
     max-width: 100%;
-    height: 300px;
+    height: auto;
   }
   .v3-brain-conn-green,
   .v3-brain-conn-grey {
