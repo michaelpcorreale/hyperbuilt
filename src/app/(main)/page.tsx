@@ -272,7 +272,7 @@ export default function V3Home() {
             <div className="v3-wb-stats">
               <div className="v3-wb-statline">
                 <span className="v3-dot-green" />
-                794 tracked · 200 live · $9.98M on the board
+                5,985 tracked · 3,068 live · $38.4M on the board
               </div>
               <p className="v3-wb-statnote">Updated daily at market open</p>
             </div>
