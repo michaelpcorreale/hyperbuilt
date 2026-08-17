@@ -270,10 +270,6 @@ export default function V3Home() {
             </p>
             <div className="v3-wb-divider" />
             <div className="v3-wb-stats">
-              <div className="v3-wb-statline">
-                <span className="v3-dot-green" />
-                5,985 tracked · 3,068 live · $38.4M on the board
-              </div>
               <p className="v3-wb-statnote">Sample data — live ingest in build</p>
             </div>
           </div>
