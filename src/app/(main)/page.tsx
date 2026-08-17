@@ -257,9 +257,9 @@ export default function V3Home() {
             </div>
           </div>
           <div className="v3-wb-info">
-            <span className="v3-wb-tag">
+            <span className="v3-wb-tag v3-wb-tag--build">
               <span className="v3-dot-green" />
-              LIVE
+              IN BUILD
             </span>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img loading="lazy" decoding="async" className="v3-wb-logo" src={asset("/uploads/v3/workbench-logo.png")} alt="Workbench" />
@@ -274,7 +274,7 @@ export default function V3Home() {
                 <span className="v3-dot-green" />
                 5,985 tracked · 3,068 live · $38.4M on the board
               </div>
-              <p className="v3-wb-statnote">Updated daily at market open</p>
+              <p className="v3-wb-statnote">Sample data — live ingest in build</p>
             </div>
           </div>
         </div>

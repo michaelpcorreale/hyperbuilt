@@ -834,6 +834,14 @@
   background: #33cc66;
   flex: none;
 }
+/* "IN BUILD" state — muted amber, signals not-yet-live */
+.v3-wb-tag--build {
+  background: #2b2410;
+  color: #e0a63a;
+}
+.v3-wb-tag--build .v3-dot-green {
+  background: #e0a63a;
+}
 .v3-wb-logo {
   height: 36px;
   width: auto;
