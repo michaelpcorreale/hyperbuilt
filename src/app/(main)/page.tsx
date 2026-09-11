@@ -129,7 +129,7 @@ export default function V3Home() {
             {CAP_CARDS.map((c) => (
               <div className="v3-cap-card" key={c.title}>
                 <div className="v3-cap-accent" />
-                <div className="v3-cap-card-title">{c.title}</div>
+                <h3 className="v3-cap-card-title">{c.title}</h3>
                 <div className="v3-cap-card-body">{c.body}</div>
               </div>
             ))}
@@ -168,7 +168,7 @@ export default function V3Home() {
                   <div className="v3-step">
                     <div className="v3-step-header">
                       <div className="v3-step-num">{s.num}</div>
-                      <div className="v3-step-label">{s.label}</div>
+                      <h3 className="v3-step-label">{s.label}</h3>
                     </div>
                     <div className="v3-step-icon">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -253,7 +253,7 @@ export default function V3Home() {
             </div>
             <div className="v3-wb-shot">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img loading="lazy" decoding="async" src={asset("/uploads/v3/workbench.min.jpg")} alt="Hyperbuilt Workbench dashboard" />
+              <img loading="lazy" decoding="async" src={asset("/uploads/v3/workbench.min.jpg")} alt="Hyperbuilt Workbench dashboard screening government solicitations against award history" />
             </div>
           </div>
           <div className="v3-wb-info">
@@ -321,7 +321,7 @@ export default function V3Home() {
           <div className="v3-cell-photo">
             <div className="v3-cell-photo-media">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img loading="lazy" decoding="async" src={asset("/uploads/v3/cell-photo.min.jpg")} alt="Autonomous machining cell" />
+              <img loading="lazy" decoding="async" src={asset("/uploads/v3/cell-photo.min.jpg")} alt="Robot-tended autonomous machining cell for high-mix low-volume defense parts" />
             </div>
             <div className="v3-cell-badge">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -350,7 +350,7 @@ export default function V3Home() {
           <div className="v3-ladder">
             <div className="v3-rung v3-rung-manned">
               <p className="v3-rung-label v3-rung-label-green">Current Status</p>
-              <p className="v3-rung-title">MANNED</p>
+              <h3 className="v3-rung-title">MANNED</h3>
               <p className="v3-rung-sub">the baseline.</p>
               <p className="v3-rung-desc">
                 Every part measured, every cycle recorded. Operators run the cell
@@ -360,7 +360,7 @@ export default function V3Home() {
             <div className="v3-ladder-arrow v3-arrow-1">→</div>
             <div className="v3-rung v3-rung-supervised">
               <p className="v3-rung-label">Next Phase</p>
-              <p className="v3-rung-title">SUPERVISED</p>
+              <h3 className="v3-rung-title">SUPERVISED</h3>
               <p className="v3-rung-sub">humans watch.</p>
               <p className="v3-rung-desc">
                 The cell runs no-touch with humans monitoring and intervening when
@@ -370,7 +370,7 @@ export default function V3Home() {
             <div className="v3-ladder-arrow v3-arrow-2">→</div>
             <div className="v3-rung v3-rung-lights">
               <p className="v3-rung-label">Target</p>
-              <p className="v3-rung-title">LIGHTS-OUT</p>
+              <h3 className="v3-rung-title">LIGHTS-OUT</h3>
               <p className="v3-rung-sub">earned on evidence.</p>
               <p className="v3-rung-desc">
                 Sustained no-touch success, an intervention-rate threshold, and

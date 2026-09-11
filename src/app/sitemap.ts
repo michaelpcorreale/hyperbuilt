@@ -7,6 +7,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: "https://hyperbuilt.com/",
+      // Stamped at build time, so every deploy signals freshness to crawlers.
+      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
       images: [

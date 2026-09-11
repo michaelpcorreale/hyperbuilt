@@ -419,6 +419,7 @@
   flex: none;
 }
 .v3-cap-card-title {
+  margin: 0;
   font-family: var(--grotesk);
   font-weight: 700;
   font-size: 14px;
@@ -575,6 +576,7 @@
   flex: none;
 }
 .v3-step-label {
+  margin: 0;
   font-family: var(--grotesk);
   font-weight: 700;
   font-size: 14px;
