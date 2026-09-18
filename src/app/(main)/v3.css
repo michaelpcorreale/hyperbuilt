@@ -1206,7 +1206,8 @@
 }
 .v3-ladder-arrow {
   width: 32px;
-  height: 218px;
+  /* stretches with the rungs, which grow with their copy */
+  align-self: stretch;
   flex: none;
   display: flex;
   align-items: center;
