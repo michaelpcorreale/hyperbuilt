@@ -1064,53 +1064,59 @@
 .v3-cell-photo {
   position: relative;
   overflow: hidden;
+  container-type: inline-size;
   border: 1px solid #2a2a2a;
   border-radius: 4px;
   box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.4);
   background: #111;
 }
-/* Cell readout: a row of small translucent boxes along the bottom of the video;
-   the gaps between them leave the video clear. */
+/* Cell readout: five equal boxes in one row across the bottom of the video, the
+   same layout at every width. Sizes use container units (cqw) of the cell, so
+   narrower screens get a proportionally smaller copy, floored for legibility. */
 .v3-cell-bar {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 2;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 12px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(4px, 0.6cqw, 6px);
+  padding: clamp(6px, 0.8cqw, 10px) clamp(6px, 1cqw, 12px);
   /* keeps the small type legible over light parts of the video */
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
 }
 .v3-stat {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 6px;
-  padding: 5px 9px;
-  background: rgba(10, 10, 11, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  justify-content: center;
+  gap: clamp(2px, 0.3cqw, 4px);
+  min-width: 0;
+  padding: clamp(4px, 0.6cqw, 7px) clamp(3px, 0.8cqw, 9px);
+  background: rgba(10, 10, 11, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 4px;
-  white-space: nowrap;
+  text-align: center;
 }
 .v3-stat-label {
   font-family: var(--grotesk);
   font-weight: 700;
-  font-size: 8.5px;
-  letter-spacing: 1.2px;
+  font-size: clamp(6px, 0.94cqw, 8.5px);
+  letter-spacing: clamp(0.4px, 0.13cqw, 1.2px);
   text-transform: uppercase;
   color: #a6a6a6;
 }
 .v3-stat-value {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  justify-content: center;
+  gap: clamp(3px, 0.5cqw, 5px);
   font-family: var(--grotesk);
   font-weight: 700;
-  font-size: 10.5px;
-  letter-spacing: 0.6px;
+  font-size: clamp(8px, 1.17cqw, 10.5px);
+  line-height: 1.15;
+  letter-spacing: clamp(0.3px, 0.07cqw, 0.6px);
   text-transform: uppercase;
   font-variant-numeric: tabular-nums;
   color: #fff;
@@ -1119,6 +1125,7 @@
   color: var(--accent);
 }
 .v3-stat-dot {
+  flex: none;
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -1145,12 +1152,13 @@
 .v3-rung {
   flex: 1;
   min-width: 0;
-  height: 218px;
+  /* grows with its text so nothing is clipped; the row stretches all three
+     rungs to the tallest one */
+  min-height: 218px;
   padding: 28px 24px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  overflow: hidden;
 }
 .v3-rung-manned {
   background: #222;
@@ -1494,17 +1502,11 @@
   .v3-cell-photo-media {
     height: 280px;
   }
-  .v3-cell-bar {
-    position: static;
-    padding: 10px;
-    background: #111;
-    text-shadow: none;
-  }
   .v3-ladder {
     flex-direction: column;
   }
   .v3-rung {
-    height: auto;
+    min-height: 0;
   }
   .v3-ladder-arrow {
     width: 100%;
