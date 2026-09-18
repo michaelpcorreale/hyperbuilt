@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { asset } from "@/lib/asset";
 import HeroVideo from "@/components/v3/HeroVideo";
+import InViewVideo from "@/components/v3/InViewVideo";
 
 const PROCESS_STEPS = [
   { num: "01", label: "REVIEW", icon: "icon-file-text.svg", body: "Drawing, specs and bore-to-face concentricity callouts are reviewed against a one-setup mill-turn plan before we quote." },
@@ -8,6 +9,14 @@ const PROCESS_STEPS = [
   { num: "03", label: "INSPECT", icon: "icon-check-circle.svg", body: "The AS9102 first article comes off that same machine and is measured on a DCC CMM in a climate-controlled room." },
   { num: "04", label: "QUALIFY", icon: "icon-badge-check.svg", body: "The prime qualifies us as a source on the part number. It runs 18 to 24 months — the wall that makes the position worth holding." },
   { num: "05", label: "PRODUCE", icon: "icon-factory.svg", body: "Frozen configurations and multiyear buys justify dedicated fixturing, and repeat orders move to unattended running as the cell earns it." },
+];
+
+const CELL_STATS = [
+  { label: "Cell", value: "04" },
+  { label: "Status", value: "Qualified", accent: true },
+  { label: "Stage", value: "Manned → Supervised" },
+  { label: "Cycles", value: "12,480" },
+  { label: "Interventions", value: "0.04%" },
 ];
 
 const SUBSYSTEMS = [
@@ -330,31 +339,22 @@ export default function V3Home() {
         <div className="v3-cell-ladder reveal">
           <div className="v3-cell-photo">
             <div className="v3-cell-photo-media">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img loading="lazy" decoding="async" src={asset("/uploads/v3/cell-photo.min.jpg")} alt="Robot-tended machining cell for missile and rocket motor hardware" />
+              <InViewVideo
+                src={asset("/uploads/v3/cell-animation.mp4")}
+                poster={asset("/uploads/v3/cell-animation-poster.jpg")}
+                label="Concept animation: a rail-mounted robot tending two mill-turn machines"
+              />
             </div>
-            <div className="v3-cell-badge">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img loading="lazy" decoding="async" src={asset("/uploads/v3/icon-shield.svg")} alt="" />
-              CELL 04
-            </div>
-            <div className="v3-cell-status">
-              <span className="v3-cell-pill">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img loading="lazy" decoding="async" src={asset("/uploads/v3/icon-check-circle-sm.svg")} alt="" />
-                QUALIFIED
-              </span>
-              <span className="v3-cell-status-txt">MANNED → SUPERVISED</span>
-            </div>
-            <div className="v3-cell-metrics">
-              <div className="v3-metric">
-                <span>CYCLES</span>
-                <span>12,480</span>
-              </div>
-              <div className="v3-metric">
-                <span>INTERVENTIONS</span>
-                <span>0.04%</span>
-              </div>
+            <div className="v3-cell-bar">
+              {CELL_STATS.map((st) => (
+                <div className="v3-stat" key={st.label}>
+                  <span className="v3-stat-label">{st.label}</span>
+                  <span className={`v3-stat-value${st.accent ? " v3-stat-value--accent" : ""}`}>
+                    {st.accent && <span className="v3-stat-dot" />}
+                    {st.value}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
           <div className="v3-ladder">

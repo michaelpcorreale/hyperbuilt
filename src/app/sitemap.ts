@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       images: [
         "https://hyperbuilt.com/uploads/og-image.jpg",
         "https://hyperbuilt.com/uploads/v3/mission.min.jpg",
-        "https://hyperbuilt.com/uploads/v3/cell-photo.min.jpg",
+        "https://hyperbuilt.com/uploads/v3/cell-animation-poster.jpg",
         "https://hyperbuilt.com/uploads/v3/workbench.min.jpg",
       ],
     },
