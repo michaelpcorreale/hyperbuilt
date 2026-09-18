@@ -73,9 +73,9 @@ export default function V3Home() {
         <div className="v3-hero-scrim" />
         <div className="v3-hero-inner v3-wrap reveal">
           <h1>
-            The defense sourcing crisis{" "}
+            The missile supply&nbsp;gap{" "}
             <br />
-            Fixed autonomously
+            Closed autonomously
           </h1>
         </div>
         <div className="v3-scroll-hint">
@@ -125,7 +125,7 @@ export default function V3Home() {
         <div className="v3-cap-inner">
           <span className="v3-eyebrow reveal">Capabilities</span>
           <div className="v3-cap-intro reveal">
-            <h2>From solicitation to shipment, without the queue.</h2>
+            <h2>From first article to repeat buy, without the queue.</h2>
             <p>
               Turned hard-metal hardware for missiles and solid rocket motors,
               plus aluminum structural parts — the families our cells are being
@@ -275,7 +275,8 @@ export default function V3Home() {
             <p className="v3-wb-headline">finds the work.</p>
             <p className="v3-wb-desc">
               Reads every government solicitation daily, screens the documents
-              itself, prices each against award history.
+              for the missile and motor hardware we&rsquo;re built for, and prices
+              each against award history.
             </p>
             <div className="v3-wb-divider" />
             <div className="v3-wb-stats">
