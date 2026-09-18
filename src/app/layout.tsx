@@ -5,7 +5,7 @@ import "./globals.css";
 const SITE_URL = "https://hyperbuilt.com";
 const TITLE = "Hyperbuilt: Autonomous Precision Manufacturing for Defense";
 const DESCRIPTION =
-  "America can't make thousands of the parts it depends on. Hyperbuilt reverse engineers and machines them — 5-axis precision, CMM-verified, made in America.";
+  "Turned hard-metal hardware for missiles and solid rocket motors, 2.75\" to 12\", in 17-4PH, 4340, 300M and titanium, plus aluminum structures. Made in America.";
 
 // Set in the deploy workflow once the property is claimed in Search Console.
 // Left undefined locally so no empty verification tag is emitted.
@@ -111,16 +111,17 @@ const schemaGraph = {
         },
       ],
       knowsAbout: [
-        "Precision CNC machining",
-        "3- and 5-axis milling",
-        "Defense sustainment manufacturing",
-        "Reverse engineering of obsolete and sole-source parts",
-        "Technical data package (TDP) development",
-        "Source Approval Request (SAR) qualification",
+        "Mill-turn machining",
+        "Precision CNC turning",
+        "Solid rocket motor (SRM) components",
+        "Rocket motor nozzle, closure and case hardware",
+        "Missile structural components",
+        "Hard-metal machining: 17-4PH, 15-5PH, 4340, 300M, titanium, Inconel",
+        "Aluminum aerospace structures: 6061, 7075",
+        "UAS and satellite structural components",
+        "5-axis milling",
         "CMM inspection and metrology",
-        "Industrial CT scanning",
         "In-process probing",
-        "High-mix low-volume (HMLV) production",
         "Unattended and lights-out machining",
         "Autonomous manufacturing software",
       ],

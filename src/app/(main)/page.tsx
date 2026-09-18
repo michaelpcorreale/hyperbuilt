@@ -3,11 +3,11 @@ import { asset } from "@/lib/asset";
 import HeroVideo from "@/components/v3/HeroVideo";
 
 const PROCESS_STEPS = [
-  { num: "01", label: "SCAN", icon: "icon-scan.svg", body: "Industrial CT and metrology capture the part inside and out, internal geometry included." },
-  { num: "02", label: "ENGINEER", icon: "icon-file-text.svg", body: "We author the technical data package from measurement, not from a copy. It belongs to us." },
-  { num: "03", label: "MAKE", icon: "icon-factory.svg", body: "The cell machines it unattended: robot-loaded, probe-qualified on every load." },
-  { num: "04", label: "VERIFY", icon: "icon-check-circle.svg", body: "In-machine probing, an independent in-cell gauge, and a referee CMM. Three instruments, one model." },
-  { num: "05", label: "APPROVE", icon: "icon-badge-check.svg", body: "The evidence assembles into a Source Approval Request (SAR). We're on the part number permanently." },
+  { num: "01", label: "REVIEW", icon: "icon-file-text.svg", body: "Drawing, specs and bore-to-face concentricity callouts are reviewed against a one-setup mill-turn plan before we quote." },
+  { num: "02", label: "PROVE", icon: "icon-scan.svg", body: "Programmed, fixtured and probe-proven on the machine that will run production — so there's nothing to re-prove later." },
+  { num: "03", label: "INSPECT", icon: "icon-check-circle.svg", body: "The AS9102 first article comes off that same machine and is measured on a DCC CMM in a climate-controlled room." },
+  { num: "04", label: "QUALIFY", icon: "icon-badge-check.svg", body: "The prime qualifies us as a source on the part number. It runs 18 to 24 months — the wall that makes the position worth holding." },
+  { num: "05", label: "PRODUCE", icon: "icon-factory.svg", body: "Frozen configurations and multiyear buys justify dedicated fixturing, and repeat orders move to unattended running as the cell earns it." },
 ];
 
 const SUBSYSTEMS = [
@@ -38,21 +38,27 @@ const SUBSYSTEMS = [
 ];
 
 const CAP_CARDS = [
-  { title: "Processes", body: "3- and 5-axis milling · in-process probing" },
-  { title: "Tolerance", body: `To ±0.0005" on critical features; ±0.001" routine` },
+  {
+    title: "Rocket motor hardware",
+    body: "Non-energetic solid rocket motor components, 2.75 to 12 inches in diameter — nozzle shells and housings, throat-insert retainers, igniter bodies, closures and motor case hardware.",
+  },
+  {
+    title: "Missile structures",
+    body: "Fins, lugs, adapters and inert fuze bodies — turned bodies with milled features, and concentricity called out between bore and face.",
+  },
+  {
+    title: "Aluminum structures",
+    body: "Brackets, housings, adapters and airframe fittings in 6061 and 7075 for missile, UAS and satellite builders.",
+  },
+  {
+    title: "Processes",
+    body: "Mill-turn first — turned and milled in one setup, because every re-fixture stacks error. 5-axis and high-speed milling for prismatic and aluminum work.",
+  },
   {
     title: "Materials",
-    body: "Aluminum · carbon and alloy steels · stainless (303/304/316, 15-5PH, 17-4PH) · titanium · nickel alloys (Inconel, Monel) · copper-nickel · nickel-aluminum bronze. Others on request.",
+    body: "17-4PH · 15-5PH · 4340 · 300M · titanium · Inconel · aluminum 6061 and 7075",
   },
-  {
-    title: "HMLV Autonomous Production",
-    body: "High mix, low volume — lot sizes from one, changeovers measured in minutes. Robot-tended cell built for unattended operation — capacity that doesn't end at shift change.",
-  },
-  { title: "Inspection", body: "Probing · independent in-cell gauge · referee CMM · industrial CT" },
-  {
-    title: "Specialty",
-    body: "Sole-source and obsolete part numbers — reverse engineered, qualified, and owned",
-  },
+  { title: "Inspection", body: "In-process probing · in-cell gauging · DCC CMM in a climate-controlled room" },
 ];
 
 export default function V3Home() {
@@ -121,8 +127,9 @@ export default function V3Home() {
           <div className="v3-cap-intro reveal">
             <h2>From solicitation to shipment, without the queue.</h2>
             <p>
-              Machined components for defense sustainment — quoted in a day,
-              produced in a cell that doesn&rsquo;t stop at shift change.
+              Turned hard-metal hardware for missiles and solid rocket motors,
+              plus aluminum structural parts — the families our cells are being
+              built around.
             </p>
           </div>
           <div className="v3-cap-grid reveal-stagger">
@@ -147,20 +154,22 @@ export default function V3Home() {
         <div className="v3-process-inner">
           <span className="v3-eyebrow reveal">Process</span>
           <div className="v3-process-intro reveal">
-            <h2>We qualify what the industrial base can no longer supply.</h2>
+            <h2>Qualify once. Supply for the life of the program.</h2>
             <p>
-              Where the original manufacturer is gone and the data went with it, we
-              rebuild both — and become an approved source for every future buy.
+              Qualified motor and missile configurations freeze, and the buys run
+              for years. So we treat qualification as the product: earn the source
+              position on a part number once, then supply it for as long as the
+              program buys it.
             </p>
           </div>
 
           <div className="v3-infographic reveal">
             <div className="v3-info-toplabel">
-              <span className="v3-badge">HYPERBUILT-OWNED DATA, END TO END</span>
+              <span className="v3-badge">ONE SETUP, ONE MACHINE, END TO END</span>
               <div className="v3-info-connector">
                 <span className="v3-info-arrow">▸</span>
               </div>
-              <span className="v3-badge v3-badge-grotesk">SOURCE APPROVAL PROCESS</span>
+              <span className="v3-badge v3-badge-grotesk">SOURCE QUALIFICATION</span>
             </div>
             <div className="v3-flow">
               {PROCESS_STEPS.map((s, i) => (
@@ -200,20 +209,20 @@ export default function V3Home() {
               <span className="v3-tl-rowlabel">THE OLD WAY</span>
               <div className="v3-tl-content">
                 <div className="v3-tl-bar v3-tl-bar-old">
-                  find a willing shop · hand reverse-engineering · manual SAR
-                  paperwork · 12–18-month production leads, forever
+                  re-fixtured across machines · first article and production on
+                  different iron · 7–10-month leads
                 </div>
-                <span className="v3-tl-note">Years — if anyone tries at all.</span>
+                <span className="v3-tl-note">Lead times set by the queue, not the part.</span>
               </div>
             </div>
             <div className="v3-tl-row">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img loading="lazy" decoding="async" className="v3-tl-logo" src={asset("/uploads/v3/wordmark-sm.svg")} alt="Hyperbuilt" />
               <div className="v3-tl-content">
-                <div className="v3-tl-bar v3-tl-bar-hb">scan · blueprint · verified part</div>
+                <div className="v3-tl-bar v3-tl-bar-hb">one setup · one machine · qualified source</div>
                 <span className="v3-tl-note">
-                  Engineering and production in days, not years — reorders ship at
-                  machine speed.
+                  Qualification takes as long as it takes. After that, reorders run
+                  at machine speed.
                 </span>
               </div>
             </div>
