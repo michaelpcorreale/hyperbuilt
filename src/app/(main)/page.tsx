@@ -238,7 +238,7 @@ export default function V3Home() {
           <div className="v3-brain-intro reveal">
             <h2>We wrote the layer that makes machines a factory.</h2>
             <p>
-              Mills, a robot, and a controller are inventory until something
+              Mill-turns, mills, a robot and a controller are inventory until something
               coordinates them. The <b>[BRAIN]</b> is that something — and its
               authority is bounded by design.
             </p>
@@ -331,7 +331,7 @@ export default function V3Home() {
           <div className="v3-cell-photo">
             <div className="v3-cell-photo-media">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img loading="lazy" decoding="async" src={asset("/uploads/v3/cell-photo.min.jpg")} alt="Robot-tended autonomous machining cell for high-mix low-volume defense parts" />
+              <img loading="lazy" decoding="async" src={asset("/uploads/v3/cell-photo.min.jpg")} alt="Robot-tended machining cell for missile and rocket motor hardware" />
             </div>
             <div className="v3-cell-badge">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -422,7 +422,7 @@ export default function V3Home() {
           <div className="v3-footer-brand">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img loading="lazy" decoding="async" src={asset("/uploads/v3/footer-logo.svg")} alt="Hyperbuilt" />
-            <p>Industrial defense systems built for speed, reliability, and control.</p>
+            <p>Turned hard-metal hardware for missiles and solid rocket motors.</p>
           </div>
           <nav className="v3-footer-links">
             <a href="#mission">MISSION</a>
