@@ -422,7 +422,7 @@ export default function V3Home() {
           <div className="v3-footer-brand">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img loading="lazy" decoding="async" src={asset("/uploads/v3/footer-logo.svg")} alt="Hyperbuilt" />
-            <p>Turned hard-metal hardware for missiles and solid rocket motors.</p>
+            <p>Machined hardware for missiles and munitions. Automated cells. Made in America.</p>
           </div>
           <nav className="v3-footer-links">
             <a href="#mission">MISSION</a>

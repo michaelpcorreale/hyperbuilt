@@ -3,16 +3,16 @@ import { asset } from "@/lib/asset";
 import "./globals.css";
 
 const SITE_URL = "https://hyperbuilt.com";
-const TITLE = "Hyperbuilt: Autonomous Precision Manufacturing for Defense";
+const TITLE = "Hyperbuilt: Machined Hardware for Missiles and Munitions";
 const DESCRIPTION =
-  "Turned hard-metal hardware for missiles and solid rocket motors, 2.75\" to 12\", in 17-4PH, 4340, 300M and titanium, plus aluminum structures. Made in America.";
+  "Machined hardware for missiles and munitions: nozzle housings, igniter bodies, motor case hardware and airframe structures. Automated cells. Made in America.";
 
 // Set in the deploy workflow once the property is claimed in Search Console.
 // Left undefined locally so no empty verification tag is emitted.
 const GOOGLE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 const OG_IMAGE = asset("/uploads/og-image.jpg");
-const OG_ALT = "Hyperbuilt: Autonomous Precision Manufacturing for Defense";
+const OG_ALT = "Hyperbuilt logo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -99,7 +99,7 @@ const schemaGraph = {
       },
       image: `${SITE_URL}/uploads/og-image.jpg`,
       description: DESCRIPTION,
-      slogan: "Autonomy is earned, not assumed.",
+      slogan: "Machined hardware for missiles and munitions. Automated cells. Made in America.",
       areaServed: { "@type": "Country", name: "United States" },
       contactPoint: [
         {
@@ -116,6 +116,7 @@ const schemaGraph = {
         "Solid rocket motor (SRM) components",
         "Rocket motor nozzle, closure and case hardware",
         "Missile structural components",
+        "Munitions hardware",
         "Hard-metal machining: 17-4PH, 15-5PH, 4340, 300M, titanium, Inconel",
         "Aluminum aerospace structures: 6061, 7075",
         "UAS and satellite structural components",
