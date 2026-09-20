@@ -437,61 +437,10 @@
   line-height: 21px;
   color: #595959;
 }
-
-/* ============ PROCESS ============ */
-.v3-process {
-  position: relative;
-  background: #fff;
-  color: #222;
-  overflow: hidden;
-}
-.v3-process-bg {
-  position: absolute;
-  left: -29.38%;
-  top: -12.69%;
-  width: 129.38%;
-  height: 112.69%;
-  z-index: 0;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.v3-process-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: rgba(255, 255, 255, 0.8);
-}
-.v3-process-inner {
-  position: relative;
-  z-index: 2;
-  padding-top: var(--sec-top);
-  padding-bottom: clamp(64px, 7.4vw, 107px);
-  padding-left: max(clamp(20px, 6.25vw, 90px), (100% - 1260px) / 2);
-  padding-right: max(clamp(20px, 6.25vw, 90px), (100% - 1260px) / 2);
-}
-.v3-process-intro {
-  margin-top: clamp(44px, 4.6vw, 66px);
-  max-width: 1260px;
-}
-.v3-process-intro h2 {
-  margin: 0;
-  font-family: var(--inter);
-  font-weight: 500;
-  font-size: clamp(26px, 2.78vw, 40px);
-  line-height: 1.125;
-  letter-spacing: -0.005em;
-  color: #222;
-}
-.v3-process-intro p {
-  margin: 12px 0 0;
-  max-width: 995px;
-  font-family: var(--inter);
-  font-weight: 400;
-  font-size: clamp(18px, 1.67vw, 24px);
-  line-height: 1.25;
-  color: #222;
-}
+/* The longest step name stops fitting beside its number below ~140px of card.
+   All five cards are the same width, so they switch together and stay aligned. */
+@container step (max-width: 140px) {}
+/* flow infographic (Process / Manufacturing as a Service) */
 
 /* infographic panel */
 .v3-infographic {
@@ -565,14 +514,12 @@
   align-items: center;
   gap: 8px 10px;
 }
-/* The longest step name stops fitting beside its number below ~140px of card.
-   All five cards are the same width, so they switch together and stay aligned. */
-@container step (max-width: 140px) {
+
   .v3-step-header {
     flex-direction: column;
     align-items: flex-start;
   }
-}
+
 .v3-step-num {
   width: 28px;
   height: 28px;
@@ -626,81 +573,31 @@
   align-self: center;
 }
 
-/* timeline */
-.v3-timeline {
-  margin-top: clamp(30px, 2.9vw, 42px);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.v3-timeline-head {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.v3-timeline-label {
-  font-family: var(--grotesk);
-  font-weight: 700;
-  font-size: 20px;
-  letter-spacing: 1px;
-  color: #222;
-  white-space: nowrap;
-}
-.v3-rule {
-  flex: 1;
-  min-width: 0;
-  height: 1px;
-  background: #222;
-}
-.v3-tl-row {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.v3-tl-rowlabel {
-  font-family: var(--grotesk);
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.7px;
-  color: #222;
-}
-.v3-tl-logo {
-  width: 142.5px;
-  height: 15px;
-}
-.v3-tl-content {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-.v3-tl-bar {
-  border-radius: 999px;
-  padding: 10px 18px;
-  font-family: var(--grotesk);
-  font-weight: 500;
-  font-size: 13px;
-  letter-spacing: 0.13px;
-  white-space: nowrap;
-}
-.v3-tl-bar-old {
-  background: #f7f7f7;
-  border: 1px solid #d5d5d5;
-  color: #222;
-  width: 860px;
-  max-width: 100%;
-}
-.v3-tl-bar-hb {
-  background: #111827;
-  color: #fff;
-  width: 430px;
-  max-width: 50%;
-}
-.v3-tl-note {
-  font-family: var(--grotesk);
-  font-weight: 400;
-  font-size: 13px;
-  color: #222;
+@media (max-width: 860px) {
+  .v3-flow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .v3-step {
+    min-height: 0;
+  }
+  .v3-step-connector {
+    transform: rotate(90deg);
+  }
+  .v3-info-toplabel {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .v3-info-connector {
+    display: none;
+  }
+  .v3-badge {
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    padding: 6px 12px;
+    white-space: nowrap;
+  }
 }
 
 /* ============ BRAIN (dark) ============ */
@@ -936,6 +833,73 @@
 }
 
 /* subsystem cards */
+/* lane labels: which side of the fence a tier sits on */
+.v3-lane {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px var(--bx);
+  background: #161616;
+  border-left: 3px solid #3a3a3a;
+  font-family: var(--grotesk);
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.v3-lane--customer {
+  border-left-color: var(--accent);
+}
+.v3-lane-side {
+  font-weight: 700;
+  color: #fff;
+}
+.v3-lane--customer .v3-lane-side {
+  color: var(--accent);
+}
+.v3-lane-title {
+  font-weight: 700;
+  color: #b3b3b3;
+}
+.v3-lane-hint {
+  margin-left: auto;
+  font-weight: 500;
+  color: #737373;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* one-way link from the control plane up to the customer view */
+.v3-brain-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px var(--bx);
+  background: #0d0d0d;
+}
+.v3-brain-link-arrow {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  background: var(--accent);
+  -webkit-mask: url("/uploads/v3/eyebrow-chevron.svg") no-repeat center / contain;
+  mask: url("/uploads/v3/eyebrow-chevron.svg") no-repeat center / contain;
+  transform: rotate(180deg);
+}
+.v3-brain-link-text {
+  font-family: var(--grotesk);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #8c8c8c;
+}
+.v3-sub-arrow {
+  width: 26px;
+  flex: none;
+  align-self: center;
+  opacity: 0.55;
+}
 .v3-brain-subs {
   display: flex;
   gap: 1px;
@@ -946,11 +910,14 @@
 .v3-sub-card {
   flex: 1;
   min-width: 0;
-  height: 241px;
-  padding: 36px 32px;
+  min-height: 241px;
+  padding: 32px 26px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+.v3-sub-strategy {
+  background: #1b1b1b;
 }
 .v3-sub-core {
   background: #161616;
@@ -1028,6 +995,166 @@
 }
 
 /* ============ FACTORY (light bg, dark cell + ladder) ============ */
+/* ============ MANUFACTURING AS A SERVICE ============ */
+.v3-deploy {
+  /* same page gutter the other sections define for themselves */
+  --bx: max(clamp(20px, 6.25vw, 90px), (100% - 1260px) / 2);
+  background: #fff;
+  color: #222;
+  overflow: hidden;
+}
+.v3-deploy-inner {
+  position: relative;
+  z-index: 2;
+  padding-top: var(--sec-top);
+  padding-bottom: clamp(50px, 5.8vw, 83px);
+  padding-left: var(--bx);
+  padding-right: var(--bx);
+}
+.v3-deploy-kicker {
+  margin: 10px 0 0;
+  font-family: var(--grotesk);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #8c8c8c;
+}
+.v3-deploy-intro {
+  margin-top: clamp(18px, 1.8vw, 26px);
+}
+.v3-deploy-intro h2 {
+  margin: 0;
+  font-family: var(--inter);
+  font-weight: 500;
+  font-size: clamp(26px, 2.78vw, 40px);
+  line-height: 1.125;
+  letter-spacing: -0.005em;
+  color: #222;
+}
+.v3-deploy-intro p {
+  margin: 12px 0 0;
+  max-width: 960px;
+  font-family: var(--inter);
+  font-weight: 400;
+  font-size: clamp(18px, 1.67vw, 24px);
+  line-height: 1.25;
+  color: #222;
+}
+.v3-deploy-grid {
+  margin-top: clamp(32px, 2.8vw, 40px);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2px;
+}
+.v3-deploy-card {
+  background: #f7f7f7;
+  border: 1px solid #e6e6e6;
+  padding: 24px;
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.v3-deploy-accent {
+  width: 40px;
+  height: 3px;
+  background: var(--accent);
+  flex: none;
+}
+.v3-deploy-card:first-child .v3-deploy-accent {
+  background: #bfbfbf;
+}
+.v3-deploy-card-title {
+  margin: 0;
+  font-family: var(--grotesk);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #222;
+}
+.v3-deploy-card-body {
+  font-family: var(--inter);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #595959;
+}
+.v3-deploy-oldway {
+  margin: clamp(20px, 2vw, 28px) 0 0;
+  max-width: 900px;
+  font-family: var(--inter);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 23px;
+  color: #8c8c8c;
+}
+/* digital twin band: the cell animation beside its explanation */
+.v3-twin {
+  margin-top: clamp(28px, 2.8vw, 40px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(20px, 2.4vw, 36px);
+  align-items: center;
+}
+.v3-twin-media {
+  position: relative;
+  height: clamp(220px, 24vw, 330px);
+  border: 1px solid #d5d5d5;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #111;
+}
+.v3-twin-media video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.v3-twin-tag {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 2;
+  padding: 5px 9px;
+  background: rgba(10, 10, 11, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+  font-family: var(--grotesk);
+  font-weight: 700;
+  font-size: 9.5px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #d9d9d9;
+}
+.v3-twin-copy h3 {
+  margin: 0;
+  font-family: var(--inter);
+  font-weight: 500;
+  font-size: clamp(20px, 1.9vw, 27px);
+  line-height: 1.2;
+  color: #222;
+}
+.v3-twin-copy p {
+  margin: 12px 0 0;
+  font-family: var(--inter);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 23px;
+  color: #595959;
+}
+.v3-deploy-note {
+  margin: clamp(24px, 2.4vw, 32px) 0 0;
+  font-family: var(--grotesk);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #595959;
+}
+
 .v3-factory {
   --bx: max(clamp(20px, 6.25vw, 90px), (100% - 1260px) / 2);
   position: relative;
@@ -1457,8 +1584,16 @@
 }
 
 @media (max-width: 1024px) {
+  .v3-deploy-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .v3-brain-subs {
     flex-direction: column;
+  }
+  .v3-sub-arrow {
+    align-self: center;
+    transform: rotate(90deg);
+    margin: 6px 0;
   }
   .v3-sub-card,
   .v3-sub-monitor {
@@ -1483,42 +1618,17 @@
   .v3-mission-chevron {
     display: none;
   }
+  .v3-deploy-grid {
+    grid-template-columns: 1fr;
+  }
+  .v3-twin {
+    grid-template-columns: 1fr;
+  }
   .v3-cap-grid {
     grid-template-columns: 1fr;
   }
   .v3-cap-card {
     min-height: 0;
-  }
-  .v3-flow {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .v3-step {
-    min-height: 0;
-  }
-  .v3-step-connector {
-    transform: rotate(90deg);
-  }
-  .v3-tl-bar {
-    white-space: normal;
-    width: 100%;
-  }
-  .v3-tl-bar-hb {
-    width: 50%;
-  }
-  .v3-info-toplabel {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .v3-info-connector {
-    display: none;
-  }
-  .v3-badge {
-    font-size: 11px;
-    letter-spacing: 0.4px;
-    padding: 6px 12px;
-    white-space: nowrap;
   }
   .v3-cell-photo-media {
     height: 280px;

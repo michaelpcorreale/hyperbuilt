@@ -5,7 +5,7 @@ import "./globals.css";
 const SITE_URL = "https://hyperbuilt.com";
 const TITLE = "Hyperbuilt: Machined Hardware for Missiles and Munitions";
 const DESCRIPTION =
-  "Machined hardware for missiles and munitions: nozzle housings, igniter bodies, motor case hardware and airframe structures. Automated cells. Made in America.";
+  "Machined hardware for missiles and munitions, produced in automated cells built around your part number — with live status on every order. Made in America.";
 
 // Set in the deploy workflow once the property is claimed in Search Console.
 // Left undefined locally so no empty verification tag is emitted.
@@ -117,6 +117,13 @@ const schemaGraph = {
         "Rocket motor nozzle, closure and case hardware",
         "Missile structural components",
         "Munitions hardware",
+        "Manufacturing as a service",
+        "Dedicated automated machining cells",
+        "Lights-out production cells",
+        "Supply chain transparency for machined parts",
+        "Live production and order visibility",
+        "Autonomous manufacturing for defense primes",
+        "Tier-1 defense supplier capacity",
         "Hard-metal machining: 17-4PH, 15-5PH, 4340, 300M, titanium, Inconel",
         "Aluminum aerospace structures: 6061, 7075",
         "UAS and satellite structural components",

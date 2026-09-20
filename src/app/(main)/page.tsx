@@ -3,12 +3,31 @@ import { asset } from "@/lib/asset";
 import HeroVideo from "@/components/v3/HeroVideo";
 import InViewVideo from "@/components/v3/InViewVideo";
 
-const PROCESS_STEPS = [
-  { num: "01", label: "REVIEW", icon: "icon-file-text.svg", body: "Drawing, specs and bore-to-face concentricity callouts are reviewed against a one-setup mill-turn plan before we quote." },
-  { num: "02", label: "PROVE", icon: "icon-scan.svg", body: "Programmed, fixtured and probe-proven on the machine that will run production — so there's nothing to re-prove later." },
-  { num: "03", label: "INSPECT", icon: "icon-check-circle.svg", body: "The AS9102 first article comes off that same machine and is measured on a DCC CMM in a climate-controlled room." },
-  { num: "04", label: "QUALIFY", icon: "icon-badge-check.svg", body: "The prime qualifies us as a source on the part number. It runs 18 to 24 months — the wall that makes the position worth holding." },
-  { num: "05", label: "PRODUCE", icon: "icon-factory.svg", body: "Frozen configurations and multiyear buys justify dedicated fixturing, and repeat orders move to unattended running as the cell earns it." },
+const SERVICE_STEPS = [
+  {
+    num: "01",
+    label: "YOUR PART",
+    icon: "icon-file-text.svg",
+    body: "A 2D file, a spec and a volume. That is the whole ask from your side.",
+  },
+  {
+    num: "02",
+    label: "ITS OWN CELL",
+    icon: "icon-scan.svg",
+    body: "We design the cell around that part: fixturing, gripper, program, probing routine and gauge plan — set up and left set up.",
+  },
+  {
+    num: "03",
+    label: "LIGHTS-OUT",
+    icon: "icon-factory.svg",
+    body: "The cell earns unattended hours on measured evidence, then runs your part through the night.",
+  },
+  {
+    num: "04",
+    label: "IN TRACE",
+    icon: "icon-check-circle.svg",
+    body: "Cell status, quantities complete, measurements and ship dates — live, alongside a digital twin of the cell running your part.",
+  },
 ];
 
 const CELL_STATS = [
@@ -21,16 +40,24 @@ const CELL_STATS = [
 
 const SUBSYSTEMS = [
   {
+    cls: "v3-sub-strategy",
+    logo: "strat-logo.svg",
+    name: "Strat",
+    tagline: "turns a print into a cell.",
+    desc: "CAD from the 2D file, CAM for the mill-turn, and the CMM routine that proves it — with the fixturing, gripper and gauge plan that go with them.",
+    num: "SUBSYSTEM 01",
+  },
+  {
     cls: "v3-sub-core",
-    logo: "core-logo.png",
+    logo: "core-logo.svg",
     name: "Core",
     tagline: "owns the record.",
-    desc: "Event-sourced state, compliance traveler, release gates, scheduling against hard resource limits.",
+    desc: "Event-sourced state, compliance traveler, release gates and scheduling — plus every probe, gauge and CMM measurement, tied to the part it came from. The record Trace reads from.",
     num: "SUBSYSTEM 02",
   },
   {
     cls: "v3-sub-cell",
-    logo: "cell-logo.png",
+    logo: "cell-logo.svg",
     name: "Cell",
     tagline: "commands the floor.",
     desc: "Permissives, handshakes, and cell I/O on a deterministic controller.",
@@ -38,7 +65,7 @@ const SUBSYSTEMS = [
   },
   {
     cls: "v3-sub-monitor",
-    logo: "monitor-logo.png",
+    logo: "monitor-logo.svg",
     name: "Monitor",
     tagline: "records the truth.",
     desc: "Real-time machine data feeding a historian. It reads; it commands nothing.",
@@ -67,7 +94,10 @@ const CAP_CARDS = [
     title: "Materials",
     body: "17-4PH · 15-5PH · 4340 · 300M · titanium · Inconel · aluminum 6061 and 7075",
   },
-  { title: "Inspection", body: "In-process probing · in-cell gauging · DCC CMM in a climate-controlled room" },
+  {
+    title: "Evidence",
+    body: "In-process probing · in-cell gauging · DCC CMM in a climate-controlled room — every measurement attached to the part it came from, and visible to you.",
+  },
 ];
 
 export default function V3Home() {
@@ -82,9 +112,9 @@ export default function V3Home() {
         <div className="v3-hero-scrim" />
         <div className="v3-hero-inner v3-wrap reveal">
           <h1>
-            The missile supply&nbsp;gap{" "}
+            The defense supply&nbsp;chain{" "}
             <br />
-            Closed autonomously
+            Autonomous and visible
           </h1>
         </div>
         <div className="v3-scroll-hint">
@@ -101,11 +131,12 @@ export default function V3Home() {
             <span className="v3-eyebrow">Mission</span>
             <h2>
               We built the <b>[BRAIN]</b> for autonomous manufacturing — and the
-              factories that run on it.
+              visibility that comes with it.
             </h2>
             <p className="sub">
-              America can&rsquo;t make thousands of the parts it depends on. We built
-              the system that can.
+              Defense parts vanish into a supply chain nobody can see. We build cells
+              that run themselves &mdash; and show you every part they make, as they
+              make it.
             </p>
             <p className="flag">Made in America 🇺🇸</p>
           </div>
@@ -134,11 +165,11 @@ export default function V3Home() {
         <div className="v3-cap-inner">
           <span className="v3-eyebrow reveal">Capabilities</span>
           <div className="v3-cap-intro reveal">
-            <h2>From first article to repeat buy, without the queue.</h2>
+            <h2>From purchase order to delivery, visible the whole way.</h2>
             <p>
               Turned hard-metal hardware for missiles and solid rocket motors,
-              plus aluminum structural parts — the families our cells are being
-              built around.
+              plus aluminum structures — machined in dedicated cells for primes
+              and their top-tier suppliers.
             </p>
           </div>
           <div className="v3-cap-grid reveal-stagger">
@@ -153,48 +184,47 @@ export default function V3Home() {
         </div>
       </section>
 
-      {/* ============ PROCESS ============ */}
-      <section id="process" className="v3-section v3-process">
-        <div
-          className="v3-process-bg"
-          style={{ backgroundImage: `url(${asset("/uploads/v3/process-bg.min.jpg")})` }}
-        />
-        <div className="v3-process-overlay" />
-        <div className="v3-process-inner">
+      {/* ============ MANUFACTURING AS A SERVICE ==== */}
+      <section id="process" className="v3-section v3-deploy">
+        <div className="v3-deploy-inner">
           <span className="v3-eyebrow reveal">Process</span>
-          <div className="v3-process-intro reveal">
-            <h2>Qualify once. Supply for the life of the program.</h2>
+          <p className="v3-deploy-kicker reveal">Manufacturing as a Service</p>
+          <div className="v3-deploy-intro reveal">
+            <h2>Your part number gets its own cell.</h2>
             <p>
-              Qualified motor and missile configurations freeze, and the buys run
-              for years. So we treat qualification as the product: earn the source
-              position on a part number once, then supply it for as long as the
-              program buys it.
+              You don&rsquo;t buy the machine, hire the operator or wait behind
+              someone else&rsquo;s work. We build an automated cell around your part,
+              run it on our floor, and give you the record it produces.
             </p>
           </div>
-
+          <p className="v3-deploy-oldway reveal">
+            The old way: a supplier buys a machine for your part, or squeezes it onto
+            one that is already busy — and your part number queues behind everything
+            else on that floor.
+          </p>
           <div className="v3-infographic reveal">
             <div className="v3-info-toplabel">
-              <span className="v3-badge">ONE SETUP, ONE MACHINE, END TO END</span>
+              <span className="v3-badge">YOUR PART NUMBER</span>
               <div className="v3-info-connector">
                 <span className="v3-info-arrow">▸</span>
               </div>
-              <span className="v3-badge v3-badge-grotesk">SOURCE QUALIFICATION</span>
+              <span className="v3-badge v3-badge-grotesk">A CELL OF ITS OWN</span>
             </div>
             <div className="v3-flow">
-              {PROCESS_STEPS.map((s, i) => (
-                <Fragment key={s.num}>
+              {SERVICE_STEPS.map((st, i) => (
+                <Fragment key={st.num}>
                   <div className="v3-step">
                     <div className="v3-step-header">
-                      <div className="v3-step-num">{s.num}</div>
-                      <h3 className="v3-step-label">{s.label}</h3>
+                      <div className="v3-step-num">{st.num}</div>
+                      <h3 className="v3-step-label">{st.label}</h3>
                     </div>
                     <div className="v3-step-icon">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img loading="lazy" decoding="async" src={asset(`/uploads/v3/${s.icon}`)} alt="" />
+                      <img loading="lazy" decoding="async" src={asset(`/uploads/v3/${st.icon}`)} alt="" />
                     </div>
-                    <p className="v3-step-body">{s.body}</p>
+                    <p className="v3-step-body">{st.body}</p>
                   </div>
-                  {i < PROCESS_STEPS.length - 1 && (
+                  {i < SERVICE_STEPS.length - 1 && (
                     /* eslint-disable-next-line @next/next/no-img-element */
                     <img
                       loading="lazy"
@@ -208,35 +238,30 @@ export default function V3Home() {
               ))}
             </div>
           </div>
-
-          <div className="v3-timeline reveal">
-            <div className="v3-timeline-head">
-              <span className="v3-timeline-label">TIMELINE</span>
-              <div className="v3-rule" />
+          <div className="v3-twin reveal">
+            <div className="v3-twin-media">
+              <InViewVideo
+                src={asset("/uploads/v3/cell-animation.mp4")}
+                poster={asset("/uploads/v3/cell-animation-poster.jpg")}
+                label="Digital twin of a rail-robot mill-turn cell"
+              />
+              <span className="v3-twin-tag">Digital twin · concept animation</span>
             </div>
-            <div className="v3-tl-row">
-              <span className="v3-tl-rowlabel">THE OLD WAY</span>
-              <div className="v3-tl-content">
-                <div className="v3-tl-bar v3-tl-bar-old">
-                  re-fixtured across machines · first article and production on
-                  different iron · 7–10-month leads
-                </div>
-                <span className="v3-tl-note">Lead times set by the queue, not the part.</span>
-              </div>
+            <div className="v3-twin-copy">
+              <h3>You watch the cell, not a status field.</h3>
+              <p>
+                Every cell we build ships with a digital twin — the same geometry and
+                motion as the machine cutting your part. It sits in Trace next to the
+                order it is running, so &ldquo;in production&rdquo; is something you
+                can see rather than something we tell you.
+              </p>
             </div>
-            <div className="v3-tl-row">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img loading="lazy" decoding="async" className="v3-tl-logo" src={asset("/uploads/v3/wordmark-sm.svg")} alt="Hyperbuilt" />
-              <div className="v3-tl-content">
-                <div className="v3-tl-bar v3-tl-bar-hb">one setup · one machine · qualified source</div>
-                <span className="v3-tl-note">
-                  Qualification takes as long as it takes. After that, reorders run
-                  at machine speed.
-                </span>
-              </div>
-            </div>
-            <div className="v3-rule" />
           </div>
+
+          <p className="v3-deploy-note reveal">
+            For motor makers, munitions lines and primes carrying part numbers that
+            deserve a dedicated cell — our capital, our floor, your part.
+          </p>
         </div>
       </section>
 
@@ -245,20 +270,22 @@ export default function V3Home() {
         <div className="v3-brain-header">
           <span className="v3-eyebrow reveal">Brain</span>
           <div className="v3-brain-intro reveal">
-            <h2>We wrote the layer that makes machines a factory.</h2>
+            <h2>We wrote the layer that runs the factory and opens it up.</h2>
             <p>
               Mill-turns, mills, a robot and a controller are inventory until something
               coordinates them. The <b>[BRAIN]</b> is that something — and its
-              authority is bounded by design.
+              authority is bounded by design. Four subsystems take a part from print
+              to proof. One view opens it to you.
             </p>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img loading="lazy" decoding="async" className="v3-brain-logo" src={asset("/uploads/v3/brain-logo.png")} alt="Hyperbuilt Brain" />
         </div>
 
-        <div className="v3-brain-syslabel">
-          <span>System Architecture</span>
-          <span>4 Subsystems · Single Control Plane</span>
+        <div className="v3-lane v3-lane--customer reveal">
+          <span className="v3-lane-side">Your side</span>
+          <span className="v3-lane-title">Customer-facing</span>
+          <span className="v3-lane-hint">One view. No login to our floor required.</span>
         </div>
 
         <div className="v3-brain-workbench reveal">
@@ -267,11 +294,11 @@ export default function V3Home() {
               <span className="v3-wb-dot" />
               <span className="v3-wb-dot" />
               <span className="v3-wb-dot" />
-              <div className="v3-wb-urlbar">hyperbuilt.com · workbench</div>
+              <div className="v3-wb-urlbar">hyperbuilt.com · trace</div>
             </div>
             <div className="v3-wb-shot">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img loading="lazy" decoding="async" src={asset("/uploads/v3/workbench.min.jpg")} alt="Hyperbuilt Workbench dashboard screening government solicitations against award history" />
+              <img loading="lazy" decoding="async" src={asset("/uploads/v3/trace.min.jpg")} alt="Trace dashboard: open orders, cell fleet status, delivery status and ship dates — sample data, in build" />
             </div>
           </div>
           <div className="v3-wb-info">
@@ -280,12 +307,13 @@ export default function V3Home() {
               IN BUILD
             </span>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img loading="lazy" decoding="async" className="v3-wb-logo" src={asset("/uploads/v3/workbench-logo.png")} alt="Workbench" />
-            <p className="v3-wb-headline">finds the work.</p>
+            <img loading="lazy" decoding="async" className="v3-wb-logo" src={asset("/uploads/v3/trace-logo.svg")} alt="Trace" />
+            <p className="v3-wb-headline">shows the work.</p>
             <p className="v3-wb-desc">
-              Reads every government solicitation daily, screens the documents
-              for the missile and motor hardware we&rsquo;re built for, and prices
-              each against award history.
+              Every order you place, live: which cell is running it, how many are
+              complete, the measurements behind them, and the date they ship — plus a
+              digital twin of your cell, the same geometry and motion as the machine
+              cutting your part.
             </p>
             <div className="v3-wb-divider" />
             <div className="v3-wb-stats">
@@ -294,15 +322,35 @@ export default function V3Home() {
           </div>
         </div>
 
-        <div className="v3-brain-connector">
-          <div className="v3-brain-conn-green" />
-          <div className="v3-brain-conn-grey" />
+        <div className="v3-brain-link reveal">
+          <span className="v3-brain-link-arrow" />
+          <span className="v3-brain-link-text">
+            Trace reads the record from Core. Nothing flows the other way.
+          </span>
+        </div>
+
+        <div className="v3-lane v3-lane--internal reveal">
+          <span className="v3-lane-side">Our side</span>
+          <span className="v3-lane-title">Internal control plane</span>
+          <span className="v3-lane-hint">The [BRAIN] proposes · Core authorizes · 4 subsystems</span>
         </div>
 
         <div className="v3-brain-subs reveal-stagger">
-          {SUBSYSTEMS.map((s) => (
-            <div className={`v3-sub-card ${s.cls}`} key={s.num}>
+          {SUBSYSTEMS.map((s, i) => (
+            <Fragment key={s.num}>
+              {i > 0 && (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  className="v3-sub-arrow"
+                  src={asset("/uploads/v3/step-connector.svg")}
+                  alt=""
+                />
+              )}
+            <div className={`v3-sub-card ${s.cls}`}>
               <div className="v3-sub-accent" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img loading="lazy" decoding="async" className="v3-sub-logo" src={asset(`/uploads/v3/${s.logo}`)} alt={s.name} />
               <div>
@@ -311,6 +359,7 @@ export default function V3Home() {
               </div>
               <span className="v3-sub-num">{s.num}</span>
             </div>
+            </Fragment>
           ))}
         </div>
 
@@ -403,10 +452,10 @@ export default function V3Home() {
         <div className="v3-contact-divider reveal" />
         <div className="v3-contact-content reveal">
           <div className="v3-contact-left">
-            <h2>Start a conversation.</h2>
+            <h2>Send us a part number.</h2>
             <p>
-              Tell us what you&rsquo;re working on. If it involves controlled data,
-              we&rsquo;ll open a secure channel.
+              Tell us the part number you can&rsquo;t get on time. If it involves
+              controlled data, we&rsquo;ll open a secure channel.
             </p>
           </div>
           <div className="v3-contact-right">
@@ -422,7 +471,7 @@ export default function V3Home() {
           <div className="v3-footer-brand">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img loading="lazy" decoding="async" src={asset("/uploads/v3/footer-logo.svg")} alt="Hyperbuilt" />
-            <p>Machined hardware for missiles and munitions. Automated cells. Made in America.</p>
+            <p>Machined hardware for missiles and munitions. Autonomous cells, visible end to end. Made in America.</p>
           </div>
           <nav className="v3-footer-links">
             <a href="#mission">MISSION</a>
