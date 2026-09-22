@@ -73,19 +73,26 @@ const SUBSYSTEMS = [
   },
 ];
 
-const CAP_CARDS = [
+const CAP_TYPES = [
+  {
+    title: "Missile structures",
+    body: "Fins, control surfaces, housings, midsections, stack frames, aft structures, adapters and rings — turned bodies with milled features, and 5-axis prismatic parts, with concentricity and true-position callouts held under automation.",
+  },
+  {
+    title: "Control actuation & fluid control",
+    body: "Actuator and valve bodies, housings, manifolds, pistons, shafts and retainers — 2 to 8 inches in 17-4PH, 15-5PH, 4340 and titanium. Turned and milled in one operation, with bore geometry, surface finish and leak-test requirements held to print.",
+  },
   {
     title: "Rocket motor hardware",
     body: "Non-energetic solid rocket motor components, 2.75 to 12 inches in diameter — nozzle shells and housings, throat-insert retainers, igniter bodies, closures and motor case hardware.",
   },
   {
-    title: "Missile structures",
-    body: "Fins, lugs, adapters and inert fuze bodies — turned bodies with milled features, and concentricity called out between bore and face.",
-  },
-  {
     title: "Aluminum structures",
     body: "Brackets, housings, adapters and airframe fittings in 6061 and 7075 for missile, UAS and satellite builders.",
   },
+];
+
+const CAP_SPECS = [
   {
     title: "Processes",
     body: "Mill-turn first — turned and milled in one setup, because every re-fixture stacks error. 5-axis and high-speed milling for prismatic and aluminum work.",
@@ -116,6 +123,10 @@ export default function V3Home() {
             <br />
             Autonomous and visible
           </h1>
+          <p>
+            Rocket motor, actuation and missile hardware, machined in automated
+            cells &mdash; and visible to you as it&rsquo;s made.
+          </p>
         </div>
         <div className="v3-scroll-hint">
           <span>Scroll to Explore</span>
@@ -130,14 +141,10 @@ export default function V3Home() {
           <div className="v3-mission-copy reveal">
             <span className="v3-eyebrow">Mission</span>
             <h2>
-              We built the <b>[BRAIN]</b> for autonomous manufacturing — and the
-              visibility that comes with it.
+              Defense parts vanish into a supply chain nobody can see. We&rsquo;re
+              building the <b>[BRAIN]</b> that runs our cells &mdash; and the
+              visibility that comes with it, from raw stock to your dock.
             </h2>
-            <p className="sub">
-              Defense parts vanish into a supply chain nobody can see. We build cells
-              that run themselves &mdash; and show you every part they make, as they
-              make it.
-            </p>
             <p className="flag">Made in America 🇺🇸</p>
           </div>
         </div>
@@ -167,17 +174,25 @@ export default function V3Home() {
           <div className="v3-cap-intro reveal">
             <h2>From purchase order to delivery, visible the whole way.</h2>
             <p>
-              Turned hard-metal hardware for missiles and solid rocket motors,
-              plus aluminum structures — machined in dedicated cells for primes
-              and their top-tier suppliers.
+              Turned and 5-axis hard-metal hardware for missiles, actuation and
+              rocket motors, plus aluminum structures — machined in dedicated cells
+              for primes and their top-tier suppliers.
             </p>
           </div>
           <div className="v3-cap-grid reveal-stagger">
-            {CAP_CARDS.map((c) => (
+            {CAP_TYPES.map((c) => (
               <div className="v3-cap-card" key={c.title}>
                 <div className="v3-cap-accent" />
                 <h3 className="v3-cap-card-title">{c.title}</h3>
                 <div className="v3-cap-card-body">{c.body}</div>
+              </div>
+            ))}
+          </div>
+          <div className="v3-cap-specs reveal">
+            {CAP_SPECS.map((c) => (
+              <div className="v3-cap-spec" key={c.title}>
+                <h3 className="v3-cap-spec-title">{c.title}</h3>
+                <div className="v3-cap-spec-body">{c.body}</div>
               </div>
             ))}
           </div>
@@ -471,7 +486,7 @@ export default function V3Home() {
           <div className="v3-footer-brand">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img loading="lazy" decoding="async" src={asset("/uploads/v3/footer-logo.svg")} alt="Hyperbuilt" />
-            <p>Machined hardware for missiles and munitions. Autonomous cells, visible end to end. Made in America.</p>
+            <p>Rocket motor, actuation and missile hardware, machined in automated cells &mdash; and visible to you as it&rsquo;s made.</p>
           </div>
           <nav className="v3-footer-links">
             <a href="#mission">MISSION</a>

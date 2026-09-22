@@ -271,7 +271,7 @@
   max-width: min(624px, 47%);
 }
 .v3-mission h2 {
-  margin: 26px 0 0;
+  margin: auto 0;
   font-family: var(--inter);
   font-weight: 500;
   font-size: clamp(26px, 2.78vw, 40px);
@@ -293,7 +293,7 @@
   color: #222;
 }
 .v3-mission .flag {
-  margin: auto 0 0;
+  margin: 0;
   padding-top: 40px;
   font-family: var(--inter);
   font-weight: 700;
@@ -366,8 +366,9 @@
     180deg,
     #f7f7f7 0%,
     rgba(247, 247, 247, 0.85) 45%,
-    rgba(247, 247, 247, 0.3) 75%,
-    rgba(247, 247, 247, 0) 100%
+    rgba(247, 247, 247, 0.35) 60%,
+    rgba(247, 247, 247, 0.9) 82%,
+    rgba(247, 247, 247, 0.97) 100%
   );
 }
 .v3-cap-inner {
@@ -403,8 +404,33 @@
 .v3-cap-grid {
   margin-top: clamp(32px, 2.8vw, 40px);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 2px;
+}
+/* secondary tier: process, materials and evidence read as specs, not part families */
+.v3-cap-specs {
+  margin-top: clamp(26px, 2.6vw, 36px);
+  padding-top: clamp(20px, 2vw, 28px);
+  border-top: 1px solid #d5d5d5;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 2.2vw, 36px);
+}
+.v3-cap-spec-title {
+  margin: 0 0 8px;
+  font-family: var(--grotesk);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #737373;
+}
+.v3-cap-spec-body {
+  font-family: var(--inter);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #222;
 }
 .v3-cap-card {
   background: #fff;
@@ -1584,6 +1610,9 @@
 }
 
 @media (max-width: 1024px) {
+  .v3-cap-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .v3-deploy-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1625,6 +1654,9 @@
     grid-template-columns: 1fr;
   }
   .v3-cap-grid {
+    grid-template-columns: 1fr;
+  }
+  .v3-cap-specs {
     grid-template-columns: 1fr;
   }
   .v3-cap-card {
